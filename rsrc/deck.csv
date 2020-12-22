@@ -1,0 +1,43 @@
+new_rule,Draw 2,Draw 2 cards per turn.\nThe person who played this card should draw extra cards right away (if needed) so that they have drawn 2 cards this turn.
+new_rule,Draw 3,Draw 3 cards per turn.\nThe person who played this card should draw extra cards right away (if needed) so that they have drawn 3 cards this turn.
+new_rule,Draw 4,Draw 4 cards per turn.\nThe person who played this card should draw extra cards right away (if needed) so that they have drawn 4 cards this turn.
+new_rule,Draw 5,Draw 5 cards per turn.\nThe person who played this card should draw extra cards right away (if needed) so that they have drawn 5 cards this turn.
+new_rule,Play 2,"Play 2 cards per turn.\nIf you have fewer than 2 cards in your hand, play all your cards."
+new_rule,Play 3,"Play 3 cards per turn.\nIf you have fewer than 3 cards in your hand, play all your cards."
+new_rule,Play 4,"Play 4 cards per turn.\nIf you have fewer than 4 cards in your hand, play all your cards."
+new_rule,Play All,Play all of the cards in your hand on each turn.
+new_rule,Hand Limit 0,"If it isn't your turn, you cannot have any cards in your hand - discard them immediately.\nDuring your turn, this rule does not apply to you; when your turn is over, discard remaining cards."
+new_rule,Hand Limit 1,"If it isn't your turn, you can only have 1 card in your hand - discard your choices of extras immediately.\nDuring your turn, this rule does not apply to you; when your turn is over, discard down to 1 card."
+new_rule,Hand Limit 3,"If it isn't your turn, you can only have 3 cards in your hand - discard your choices of extras immediately.\nDuring your turn, this rule does not apply to you; when your turn is over, discard down to 3 cards."
+new_rule,Keeper Limit 2,"Except during your turn, you can only have 2 Keepers in play. Discard extras (of your choice) immediately. You may play new Keepers during your turn as long as you discard to 2 when your turn ends."
+new_rule,Keeper Limit 3,"Except during your turn, you can only have 3 Keepers in play. Discard extras (of your choice) immediately. You may play new Keepers during your turn as long as you discard to 3 when your turn ends."
+new_rule,Keeper Limit 4,"Except during your turn, you can only have 4 Keepers in play. Discard extras (of your choice) immediately. You may play new Keepers during your turn as long as you discard to 4 when your turn ends."
+new_rule,Double Agenda,"A second Goal can now be played. After this, whoever plays a new Goal (or causes this card to be discarded) must choose which of the current Goals to discard.\nYou win if you satisfy either Goal (In case of a tie, continue playing until a clear winner emerges)"
+new_rule,No-Hand Bonus,"If empty handed, Draw 3 cards before observing the current draw rule."
+new_rule,Swap Plays for Draws,"At any point during your turn, you may decide to play no more cards and instead draw as many cards as you have remaining to play. (If Play All, draw as many cards as you hold)"
+new_rule,Get On With It!,"At any time before your final play, if you are not empty handed, you may discard your entire hand and draw 3 cards. Your turn then ends immediately."
+new_rule,Goal Mill,"Once during your turn, discard as many of your Goal cards as you choose, then draw that many cards."
+new_rule,Recycling,"Once during your turn, you may discard on of your Keepers from the table and draw 3 extra cards."
+action,Jackpot,Draw 3 extra cards!
+action,Discard and Draw,"Discard your entire hand, then draw as many cards as you discarded.\nDo not count this card when determining how many replacement cards to draw."
+action,Draw 2 and use 'em,"Set your hand aside.\nDraw 2 cards, play them in any order you choose, then pick up your hand and continue with your turn.\nThis card, and all cards played because of it, are counted as a single play."
+action,"Draw 3, Play 2 of Them","Set your hand aside.\nDraw 3 cards and play 2 of them. Discard the last card, then pick up your hand and continue with your turn.\nThis card, and all cards played because of it, are counted as a single play."
+action,Everybody Gets 1,"Set your hand aside.\nCount the number of players in the game (including yourself). Draw enough cards to give 1 card to each player, then do so.\nYou decide who gets what."
+action,Exchange Keepers,"Pick any Keeper another player has on the table and exchange it for one that you have on the table.\nIf you have no Keepers in play, or if no on else has a Keeper, nothing happens."
+action,Let's Do That Again,"Search through the discard pile.  Take any Action or New Rule card you wish and immediately play it.\nAnyone may look through the discard pile at any time, but the order of what's in the pile should not be changed."
+action,Let's Simplify,"Discard your choice of up to half (rounded up) of the new rule cards in play."
+action,No Limits,Discard all hand and Keeper limits currently in play.
+action,Rotate Hands,All players must pass their hands to the player next to them.\nYou decide which direction.
+action,Rules Reset,"Reset to the Basic Rules.\nDiscard all New Rule cards, and leave only the Basic Rules in play.\nDon't discard the current Goal."
+action,Use What You Take,"Take a card at random from another player's hand, and play it."
+action,Take Another Turn,Take another turn as soon as you finish this one.
+action,Random Tax,"Take 1 card at random from the hand of each other player and add these cards to your own hand."
+action,Trade Hands,Trade your hand for the hand of one of your opponents.\nThis is one of those times when you can get something for nothing.
+action,Trash a New Rule,Select one of the New Rules cards in play and place it in the discard pile.
+action,Steal a Keeper,Take your choice of any Keeper from in front of another player and place it in front of you.
+action,Zap a Card,"Choose any card in play and add it to your hand."
+#Creeper,,
+new_rule,Silver Lining,Creepers do not prevent you from winning.
+action,Trash Something,"Take your choice of any Keeper or Creeper from in front of any player and put it on the discard pile.\nIf no one has any Keepers or Creepers, nothing happens when you play this card."
+action,Creeper Sweeper,"All Creepers in play are discarded."
+action,Move a Creeper,"Choose any Creeper in front of a player and move it to some other player."
