@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-""" TODO """
+""" Utility to build printer ready images for decks of cards for the game Fluxx """
 
 import csv
 import shutil
@@ -9,12 +9,12 @@ from pathlib import Path
 from typing import List, Optional, Union
 
 from PIL import Image
-from PIL.Image import Image as PIL_Image
 from PIL import ImageFont
 from PIL import ImageDraw
 
-from cli import run as typer_run
-from string_util import safe_filename
+from lib.cli import run as typer_run
+from lib.string_util import safe_filename
+from lib.pil import get_image, resize
 
 
 def csv_reader(path: Path, dialect: csv.Dialect = csv.excel, **kwargs) -> List[str]:
@@ -22,23 +22,6 @@ def csv_reader(path: Path, dialect: csv.Dialect = csv.excel, **kwargs) -> List[s
 
     for row in csv.reader(open(path), dialect=dialect, **kwargs):
         yield [str(cell).strip() for cell in row]
-
-
-def get_image(image_dir: Path, image_stem: str) -> Optional[PIL_Image]:
-    """ Read image file from image_dir into a PIL image and return it """
-
-    filename = next(image_dir.glob(f"{image_stem}.*"), None)
-    if filename:
-        return Image.open(filename)
-    return None
-
-
-def resize(image: PIL_Image, height: int, width: int) -> PIL_Image:
-    """ Resize image to no larger than height x width keeping aspect ratio """
-
-    image_height, image_width = image.size
-    scale = min(height / image_height, width / image_width)
-    return image.resize((int(image_height * scale), int(image_width * scale)))
 
 
 def clear_directory(dir_path: Union[str, Path]) -> Path:
