@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-""" Utility to build printer ready images for decks of cards for the game Fluxx """
+""" Utility to create a printer ready images of cards for the game Fluxx. """
 
 import csv
 import shutil
@@ -121,30 +121,32 @@ def main(input_dir: Path, template_name: str = "deck.csv") -> None:
             fill="#000",  # black
         )
 
-        # Write the description
-        desc_lines = []
-        for desc_line in description.split("\\n"):
-            desc_lines += textwrap.wrap(desc_line, width=35)
-        draw.text((90, desc_v), "\n".join(desc_lines), font=font, fill="#000")
-
-        # Copy the provided icon
-        icon = get_image(input_dir, safe_name)
-        if icon:
-            image.paste(resize(icon, 200, 200), (90, desc_v))
-
-        # Combine Keeper images for Goal card
         if type_ == "goal":
+            # Combine Keeper images for Goal card
             icons = [
                 get_image(input_dir, safe_filename(keeper))
                 for keeper in description.split("\\n")
             ]
-            if len(icons) == 2 and all(icons):
+            assert icons and all(icons) and len(icons) in (2, 3)
+            if len(icons) == 2:
                 image.paste(resize(icons[0], 100, 100), (90, desc_v))
                 image.paste(resize(icons[1], 100, 100), (100 + 90, 100 + desc_v))
-            if len(icons) == 3 and all(icons):
+            elif len(icons) == 3:
                 image.paste(resize(icons[0], 100, 100), (90, desc_v))
                 image.paste(resize(icons[1], 100, 100), (100 + 90, desc_v))
                 image.paste(resize(icons[2], 100, 100), (50 + 90, 100 + desc_v))
+
+        else:
+            # Write the description
+            desc_lines = []
+            for desc_line in description.split("\\n"):
+                desc_lines += textwrap.wrap(desc_line, width=35)
+            draw.text((90, desc_v), "\n".join(desc_lines), font=font, fill="#000")
+
+            # Copy the provided icon
+            icon = get_image(input_dir, safe_name)
+            if icon:
+                image.paste(resize(icon, 200, 200), (90, desc_v))
 
         # Save the card
         dst = deck_dir / f"{safe_name}.png"
