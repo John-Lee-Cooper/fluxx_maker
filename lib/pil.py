@@ -24,4 +24,3 @@ def resize(image: PIL_Image, height: int, width: int) -> PIL_Image:
     image_height, image_width = image.size
     scale = min(height / image_height, width / image_width)
     return image.resize((int(image_height * scale), int(image_width * scale)))
-

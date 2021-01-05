@@ -1,25 +1,29 @@
 # Fluxx Deck Maker #
 
-This utility creates a printer ready images of cards for the game Fluxx.
+Fluxx_maker builds printer-ready images of Fluxx cards from a csv template file,
 
 ![Fluxx](rsrc/fluxx.png)
 
+[Fluxx](https://www.looneylabs.com/games/fluxx) is a terrific card game by Looney Labs.
+There are currently over two dozen themed decks for sale.
+This utility allows you to create your own.
+
 ### How it works ###
 
-Currently, fluxx_maker reads in a template csv file,
+Currently, Fluxx_maker reads in a template csv file,
 where each row describes a card in three columns:
 the card's Name, Type, and either a Description or (for a Keeper or Creeper type)
 the name of an Image, or (for a Goal) the name of the required Keepers and Creepers.
 
 ![csv](csv.png)
 
-flux_maker then uses the appropriate template for the card's Type,
-and writes the Name at the top of the card 
-and either writes the Description
-or draws the card's Image
-on the bottom of the card.
+Fluxx_maker then uses Piilow to
+load the appropriate template for the card's Type,
+write the Name at the top of the card 
+and either write the Description
+or draw the card's Image on the bottom of the card.
 
-After flux_maker has written each card to the deck directory,
+After Fluxx_maker has written each card to the deck directory,
 It copies 3 x 3 cards onto a printer-ready Page image,
 generating as many Page images as necessary to print the entire deck.
 
@@ -38,7 +42,7 @@ python -m venv venv
 pip install -r requirements.in
 source venv/bin/activate
 
-./flux_maker <input_directory>
+./fluxx_maker <input_directory>
 ```
 
 ### Written by ###
