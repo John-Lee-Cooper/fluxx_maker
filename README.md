@@ -1,4 +1,4 @@
-# Fluxx Deck Maker #
+# Fluxx Deck Maker
 
 Fluxx_maker builds printer-ready images of Fluxx cards from a csv template file,
 
@@ -8,9 +8,9 @@ Fluxx_maker builds printer-ready images of Fluxx cards from a csv template file,
 There are currently over two dozen themed decks for sale.
 This utility allows you to create your own.
 
-### How it works ###
+## How it works
 
-Currently, Fluxx_maker reads in a template csv file,
+Fluxx_maker reads in a template csv file,
 where each row describes a card in three columns:
 the card's Name, Type, and either a Description or (for a Keeper or Creeper type)
 the name of an Image, or (for a Goal) the name of the required Keepers and Creepers.
@@ -29,23 +29,27 @@ generating as many Page images as necessary to print the entire deck.
 
 ![PageImage](rsrc/example_page.png)
 
-### Todo ###
+## Installation
+
+```bash
+python -m venv venv
+pip install -r requirements.in
+```
+
+## Usage
+
+```bash
+source venv/bin/activate
+./fluxx_maker <input_directory>
+```
+
+## Todo
 
 * Allow special powers to Keeper/Creeper cards.
 * Allow unique images for Goal cards.
 * Print a summary of Goals per Keeper/Creeper to aid in balancing the deck.
 
-### How do I get set up? ###
-
-```bash
-python -m venv venv
-pip install -r requirements.in
-source venv/bin/activate
-
-./fluxx_maker <input_directory>
-```
-
-### Written by ###
+## Written by
 
 John Lee Cooper  
 john.lee.cooper@gatech.edu
