@@ -6,15 +6,13 @@ import csv
 import shutil
 import textwrap
 from pathlib import Path
-from typing import List, Optional, Union
+from typing import List, Union
 
-from PIL import Image
-from PIL import ImageFont
-from PIL import ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 from lib.cli import run as typer_run
-from lib.string_util import safe_filename
 from lib.pil import get_image, resize
+from lib.string_util import safe_filename
 
 
 def csv_reader(path: Path, dialect: csv.Dialect = csv.excel, **kwargs) -> List[str]:

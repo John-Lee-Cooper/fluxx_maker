@@ -2,7 +2,7 @@
 
 """ Command Line Interface functions """
 
-from typing import Callable, Any
+from typing import Any, Callable
 
 import typer
 
