@@ -16,14 +16,14 @@ from lib.string_util import safe_filename
 
 
 def csv_reader(path: Path, dialect: csv.Dialect = csv.excel, **kwargs) -> List[str]:
-    """ Generator that yields a row from a csv file as a list of strings """
+    """Generator that yields a row from a csv file as a list of strings"""
 
     for row in csv.reader(open(path), dialect=dialect, **kwargs):
         yield [str(cell).strip() for cell in row]
 
 
 def clear_directory(dir_path: Union[str, Path]) -> Path:
-    """ If dir_path exists, delete it.  Then create it """
+    """If dir_path exists, delete it.  Then create it"""
 
     dir_path = Path(dir_path)
     if dir_path.exists():
@@ -33,7 +33,7 @@ def clear_directory(dir_path: Union[str, Path]) -> Path:
 
 
 def save_raster(deck_dir: Path, rows: int = 3, cols: int = 3) -> None:
-    """ Write Fluxx cards onto letter size pages containing rows x cols cards """
+    """Write Fluxx cards onto letter size pages containing rows x cols cards"""
 
     images = list(deck_dir.iterdir())
 

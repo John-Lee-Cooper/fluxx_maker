@@ -8,7 +8,7 @@ import typer
 
 
 def run(function: Callable[..., Any]) -> Any:
-    """ TODO """
+    """TODO"""
     app = typer.Typer(add_completion=False)
     command = app.command()
     command(function)
